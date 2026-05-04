@@ -179,7 +179,7 @@ Pola distribusi prediksi pada data testing (didominasi kelas 5 dan 6) konsisten 
 
 Hasil prediksi disimpan dalam file CSV dengan format yang sesuai ketentuan soal, yaitu hanya memuat dua kolom: `Id` dan `quality`.
 
-Format file output: `hasilprediksi_3digitNIMterakhir.csv`
+Format file output: `hasilprediksi_008.csv`
 
 Contoh isi file:
 
@@ -210,7 +210,7 @@ Id,quality
 2. Upload file `wine_quality_uts.ipynb` ke Colab.
 3. Upload `data_training.csv` dan `data_testing.csv` ke sesi Colab (menggunakan panel Files di sidebar kiri atau melalui `files.upload()`).
 4. Jalankan seluruh cell secara berurutan dari atas ke bawah.
-5. File hasil prediksi `hasilprediksi_3digitNIMterakhir.csv` akan otomatis terunduh ke komputer setelah cell terakhir dijalankan.
+5. File hasil prediksi `hasilprediksi_008.csv` akan otomatis terunduh ke komputer setelah cell terakhir dijalankan.
 
 ---
 
