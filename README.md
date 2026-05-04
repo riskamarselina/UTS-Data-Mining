@@ -66,7 +66,7 @@ Kelas 5 dan 6 mendominasi data (82.38% dari total), sementara kelas 3 dan 8 sang
 Dilakukan pemeriksaan terhadap kualitas data sebelum digunakan untuk pelatihan model.
 
 **Hasil pemeriksaan:**
-- **Missing values:** Tidak ditemukan nilai yang hilang pada dataset training maupun testing (seluruh kolom bernilai 0 missing values).
+- **Missing values:** Melalui pengecekan isnull().sum(), ditemukan bahwa dataset training maupun testing ini memiliki 0 missing values. Artinya, data sudah lengkap dan tidak memerlukan teknik imputasi seperti pengisian nilai rata-rata atau median. 
 - **Data duplikat:** Tidak ditemukan baris duplikat pada kedua dataset.
 - **Kesimpulan:** Dataset dalam kondisi bersih dan siap untuk diproses lebih lanjut tanpa memerlukan imputasi atau penghapusan baris.
 
@@ -81,6 +81,7 @@ Nilai fitur dalam dataset memiliki rentang yang sangat bervariasi. Misalnya, `to
 
 Proses fitting scaler dilakukan **hanya pada data training**, kemudian transformasi yang sama diterapkan ke data testing untuk menghindari data leakage.
 
+Interpretasi: Skala yang sangat berbeda dapat menyebabkan algoritma memberikan bobot yang tidak adil pada fitur dengan angka besar. Standarisasi mengubah data sehingga memiliki rata-rata 0 dan standar deviasi 1, membuat setiap fitur memiliki "suara" yang setara dalam prediksi.  
 ---
 
 ### Step 4: Pemilihan dan Pelatihan Model
