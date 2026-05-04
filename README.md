@@ -81,7 +81,7 @@ Nilai fitur dalam dataset memiliki rentang yang sangat bervariasi. Misalnya, `to
 
 Proses fitting scaler dilakukan **hanya pada data training**, kemudian transformasi yang sama diterapkan ke data testing untuk menghindari data leakage.
 
-Interpretasi: Skala yang sangat berbeda dapat menyebabkan algoritma memberikan bobot yang tidak adil pada fitur dengan angka besar. Standarisasi mengubah data sehingga memiliki rata-rata 0 dan standar deviasi 1, membuat setiap fitur memiliki "suara" yang setara dalam prediksi.  
+
 ---
 
 ### Step 4: Pemilihan dan Pelatihan Model
