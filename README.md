@@ -1,9 +1,13 @@
 # UTS Data Mining: Klasifikasi Kualitas Anggur (Wine Quality Classification)
 
 **Nama:** Riska Marselina
+
 **NIM:** 2304020008
+
 **Program Studi:** Pendidikan Matematika
+
 **Rombel:** 1
+
 **Mata Kuliah:** Data Mining  
 **Topik:** Klasifikasi  
 **Dataset:** Wine Quality  
