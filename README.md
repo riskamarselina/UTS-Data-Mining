@@ -96,6 +96,16 @@ Model yang dipilih adalah **Random Forest Classifier** dengan konfigurasi sebaga
 | min_samples_leaf   | 1       |
 | random_state       | 42      |
 
+1. n_estimators = 500
+Parameter ini menentukan jumlah pohon keputusan (decision trees) yang akan dibangun di dalam "hutan". Semakin banyak pohon yang digunakan, hasil prediksi cenderung semakin stabil dan akurat karena model mengambil rata-rata suara (voting) dari lebih banyak pohon. Nilai 500 dipilih untuk memberikan keseimbangan yang optimal antara performa prediksi dan waktu komputasi. Keuntungan: Mengurangi risiko overfitting. Jika hanya menggunakan sedikit pohon (misal 10), model mungkin terlalu bergantung pada pola acak di sebagian kecil data. Dengan 500 pohon, model menjadi lebih tangguh terhadap variasi data yang ekstrem.
+2. max_depth = None
+Parameter ini mengontrol kedalaman maksimum dari setiap pohon keputusan. Interpretasi Nilai None: Berarti pohon akan tumbuh hingga seluruh daunnya murni (pure) atau sampai setiap daun berisi kurang dari jumlah sampel minimal yang ditentukan. Alasan: Memungkinkan model untuk menangkap hubungan yang sangat kompleks antara fitur kimiawi (seperti interaksi halus antara pH dan alkohol) yang mungkin terlewat jika kedalaman pohon dibatasi.
+3. min_samples_split = 2
+Parameter ini menentukan jumlah sampel minimum yang diperlukan untuk memecah sebuah simpul internal (node). Interpretasi Nilai 2: Sebuah simpul akan terus dipecah menjadi cabang baru selama ia memiliki setidaknya 2 sampel data. Alasan: Nilai 2 adalah nilai default yang paling fleksibel, memungkinkan pohon untuk melakukan pemisahan data sedetail mungkin hingga mencapai hasil klasifikasi yang paling spesifik.
+4. min_samples_leaf = 1
+Parameter ini menentukan jumlah sampel minimum yang harus ada di sebuah "daun" (simpul akhir). Interpretasi Nilai 1: Sebuah simpul akhir diizinkan hanya memiliki 1 sampel data. Alasan: Digunakan agar model bisa seakurat mungkin dalam mengklasifikasikan setiap baris data pada tahap pelatihan. Karena kita menggunakan 500 pohon (n_estimators), risiko overfitting dari penggunaan nilai 1 ini dapat diredam oleh mekanisme averaging dari Random Forest itu sendiri.
+5. random_state = 42Parameter ini berfungsi sebagai "benih" (seed) untuk pengacakan yang konsisten.  Interpretasi Nilai 42: Angka ini tidak memiliki makna magis, namun memastikan bahwa setiap kali kode dijalankan, proses pengacakan data dan pembangunan pohon akan selalu menghasilkan output yang sama persis. Dengan menetapkan random_state, kode yang dijalankan akan mendapatkan nilai akurasi dan hasil prediksi yang identik. 
+
 **Alasan pemilihan Random Forest:**
 1. Random Forest merupakan metode ensemble yang menggabungkan banyak decision tree sehingga lebih tahan terhadap overfitting dibanding single decision tree.
 2. Mampu menangani distribusi kelas yang tidak seimbang dengan cukup baik.
